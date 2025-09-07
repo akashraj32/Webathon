@@ -1,0 +1,159 @@
+/* Custom styles for enhanced responsiveness and unique elements */
+
+/* Smooth scrolling for navigation links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar background change on scroll */
+.navbar-fixed {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Section padding adjustments for mobile */
+@media (max-width: 768px) {
+    #home {
+        padding-top: 100px;
+        text-align: center;
+    }
+    #about,
+    #events,
+    #projects,
+    #blogs,
+    #members,
+    #contact {
+        padding: 3rem 1rem;
+    }
+}
+
+/* Hover effects for cards */
+.card-hover:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Button gradient animation */
+.join-btn {
+    background: linear-gradient(45deg, #0066cc, #003366);
+}
+.join-btn:hover {
+    background: linear-gradient(45deg, #0052a3, #002244);
+    transform: scale(1.05);
+}
+.join-btn:active {
+    transform: scale(0.95);
+}
+
+/* Form input focus enhancement */
+input:focus,
+textarea:focus {
+    box-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
+}
+
+/* Member image border animation */
+.member-img {
+    transition: border-color 0.3s ease;
+}
+.member-img:hover {
+    border-color: #ffcc00 !important;
+}
+
+/* Blog post overlay effect */
+.blog-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.blog-card:hover::before {
+    opacity: 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Animated hero text */
+.hero-title {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    nav .md\\:flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav .md\\:space-x-8 > * {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Unique section background patterns */
+#events::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 20%, #e3f2fd 0%, transparent 50%),
+                      radial-gradient(circle at 80%, #f3e5f5 0%, transparent 50%);
+    pointer-events: none;
+}
+#projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #fff5e5 0%, #ffeaa7 100%);
+    pointer-events: none;
+    opacity: 0.1;
+}
+
+/* Accessibility improvements */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
